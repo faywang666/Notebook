@@ -1,0 +1,29 @@
+﻿<div class="card" style="width: 18rem;">
+  
+    @if (IsFeature)
+    {
+        <div class="card-header">
+          Featured
+        </div>
+    }
+  
+  <div class="card-body">
+    <h2 class="card-title">@Title</h2>
+    <p class="card-text">@Text</p>
+    @ChildContent
+  </div>
+</div>
+
+@code {
+    [Parameter]
+    public string Title { get; set; } = "Title111";
+
+    [Parameter]
+    public string Text { get; set; } = "Text111";
+
+    [Parameter]
+    public bool IsFeature { get; set; } = false;
+
+    [Parameter]
+    public RenderFragment? ChildContent { get; set; }
+}
